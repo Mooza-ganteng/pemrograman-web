@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Form & “Frame” (Radio, Dropdown, Textarea, Horizontal/Vertical/H-V)</title>
+  <style>
+    :root { --gap: 12px; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #f7f7fb; color: #111827; }
+    header { padding: 20px 24px; background: #0ea5e9; color: white; }
+    h1 { margin: 0 0 6px; font-size: 22px; }
+    main { padding: 20px 24px; display: grid; gap: var(--gap); }
+    section { background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 16px; box-shadow: 0 6px 16px rgba(2, 6, 23, 0.06); }
+    section h2 { margin-top: 0; font-size: 18px; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    label { font-weight: 600; }
+    select, textarea, input[type="text"] { padding: 8px 10px; border-radius: 10px; border: 1px solid #d1d5db; }
+    textarea { width: 100%; min-height: 100px; resize: vertical; }
+
+    /* “Frame” layouts menggunakan iframe + CSS modern */
+    .frames { display: grid; gap: var(--gap); }
+    .frame { border: 0; width: 100%; height: 100%; border-radius: 10px; box-shadow: inset 0 0 0 1px #e5e7eb; }
+
+    /* Horizontal: dua baris (atas–bawah) */
+    .frames-horizontal { grid-template-rows: 1fr 1fr; height: 320px; }
+
+    /* Vertical: dua kolom (kiri–kanan) */
+    .frames-vertical { grid-template-columns: 1fr 1fr; height: 240px; }
+
+    /* Gabungan H–V: header (atas) lalu dua kolom di bawah */
+    .frames-hv { grid-template-rows: 140px 1fr; height: 380px; }
+    .frames-hv .grid-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+
+    /* Kartu kecil untuk penjelasan */
+    .note { font-size: 12px; color: #374151; background: #f3f4f6; border: 1px dashed #d1d5db; padding: 8px 10px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Demo: Radio Button, Drop Down, Text Area, & Tata Letak “Frame”</h1>
+    <div>Catatan: tag <code>&lt;frameset&gt;</code> sudah usang (deprecated). Di sini digunakan <code>&lt;iframe&gt;</code> + CSS untuk meniru frame horizontal/vertikal/gabungan.</div>
+  </header>
+
+  <main>
+    <!-- RADIO BUTTON -->
+    <section>
+      <h2>1) Radio Button</h2>
+      <form class="row" onsubmit="return false;">
+        <label>Jenis Kelamin:</label>
+        <label class="row"><input type="radio" name="jk" value="L"> Laki-laki</label>
+        <label class="row"><input type="radio" name="jk" value="P"> Perempuan</label>
+      </form>
+      <div class="note">Radio button memungkinkan memilih <em>satu</em> opsi dari beberapa pilihan.</div>
+    </section>
+
+    <!-- DROP DOWN -->
+    <section>
+      <h2>2) Drop Down (Select)</h2>
+      <div class="row">
+        <label for="prodi">Program Studi:</label>
+        <select id="prodi" name="prodi">
+          <option value="">-- pilih prodi --</option>
+          <option>Teknik Komputer</option>
+          <option>Informatika</option>
+          <option>Sistem Informasi</option>
+          <option>Teknik Elektro</option>
+        </select>
+      </div>
+      <div class="note">Drop down menampilkan daftar pilihan dalam satu komponen hemat ruang.</div>
+    </section>
+
+    <!-- TEXT AREA -->
+    <section>
+      <h2>3) Text Area</h2>
+      <label for="alamat">Alamat lengkap:</label>
+      <textarea id="alamat" placeholder="Tulis alamat di sini..."></textarea>
+      <div class="note">Text area digunakan untuk input teks panjang/multibaris.</div>
+    </section>
+
+    <!-- FRAME HORIZONTAL (ATAS–BAWAH) -->
+    <section>
+      <h2>4) Frame Horizontal (atas–bawah)</h2>
+      <div class="frames frames-horizontal">
+        <iframe class="frame" title="Frame Atas" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#dbeafe;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Atas</h3></body></html>'></iframe>
+        <iframe class="frame" title="Frame Bawah" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#dcfce7;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Bawah</h3></body></html>'></iframe>
+      </div>
+      <div class="note">Dua frame ditumpuk vertikal (baris 1 dan baris 2).</div>
+    </section>
+
+    <!-- FRAME VERTIKAL (KIRI–KANAN) -->
+    <section>
+      <h2>5) Frame Vertikal (kiri–kanan)</h2>
+      <div class="frames frames-vertical">
+        <iframe class="frame" title="Frame Kiri" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#fee2e2;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Kiri</h3></body></html>'></iframe>
+        <iframe class="frame" title="Frame Kanan" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#fef9c3;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Kanan</h3></body></html>'></iframe>
+      </div>
+      <div class="note">Dua frame berdampingan dalam dua kolom.</div>
+    </section>
+
+    <!-- FRAME GABUNGAN H–V -->
+    <section>
+      <h2>6) Frame Gabungan H–V</h2>
+      <div class="frames frames-hv">
+        <iframe class="frame" title="Header (Atas)" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#e9d5ff;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Header (Atas)</h3></body></html>'></iframe>
+        <div class="grid-bottom">
+          <iframe class="frame" title="Konten Kiri (Bawah)" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#cffafe;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Kiri (Bawah)</h3></body></html>'></iframe>
+          <iframe class="frame" title="Konten Kanan (Bawah)" srcdoc='<!DOCTYPE html><html><body style="margin:0;font-family:Arial,Helvetica,sans-serif;background:#fde68a;display:flex;align-items:center;justify-content:center;height:100%"><h3 style="margin:0">Frame Kanan (Bawah)</h3></body></html>'></iframe>
+        </div>
+      </div>
+      <div class="note">Kombinasi: satu frame lebar di atas (horizontal), dua frame di bawah (vertikal).</div>
+    </section>
+  </main>
+</body>
+</html>
