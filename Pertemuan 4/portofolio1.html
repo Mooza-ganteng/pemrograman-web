@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Anugrah Restu Mannarai</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root{
+      --bg-1: #071027;
+      --bg-2: #0b1630;
+      --card: rgba(255,255,255,0.04);
+      --accent: #38bdf8;
+      --accent-2: #7c3aed;
+      --muted: #94a3b8;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      --max-w: 960px;
+    }
+
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+      padding: 28px;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow-x:hidden;
+      background-size: 400% 400%;
+      animation: bgShift 12s ease-in-out infinite;
+      flex-direction: column;
+    }
+    @keyframes bgShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* 🔹 Navbar */
+    .navbar {
+      width: 100%;
+      max-width: var(--max-w);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .navbar a {
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .navbar a:hover {
+      background: var(--accent-2);
+      transform: translateY(-3px);
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-w);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.03);
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:24px;
+      transform: translateY(0);
+      transition: transform 0.4s ease;
+    }
+    .container:hover{ transform: translateY(-6px); }
+
+    .profile{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.008));
+      padding:22px;
+      border-radius:12px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .avatar{
+      width:150px; height:150px; margin:0 auto 12px; border-radius:999px; overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 8px 30px rgba(124,58,237,0.12);
+      transition: transform 0.45s cubic-bezier(.2,.9,.3,1), box-shadow 0.45s;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; }
+    .avatar:hover{ transform: translateY(-6px) scale(1.03); box-shadow: 0 18px 50px rgba(124,58,237,0.22)}
+
+    .name{ font-size:20px; font-weight:700; margin-bottom:6px }
+    .role{ color:var(--muted); font-size:14px; margin-bottom:10px }
+    .about{ color:var(--muted); font-size:14px; text-align:left; margin-top:12px }
+
+    .contact{ margin-top:14px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap }
+    .chip{ padding:8px 10px; border-radius:999px; background:transparent; border:1px solid rgba(255,255,255,0.02); font-size:13px; color:var(--muted); transition:all 0.25s }
+    .chip:hover{ background:rgba(255,255,255,0.04); color:#fff; transform:translateY(-4px); }
+
+    .socials{ margin-top:18px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap }
+    .socials a{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px;
+      text-decoration:none; color:var(--accent); font-weight:600; font-size:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border:1px solid rgba(255,255,255,0.02);
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+    .socials a:hover{ transform:translateY(-6px); background:linear-gradient(180deg,var(--accent),var(--accent-2)); color:#052028 }
+
+    .main{ padding:10px 6px; }
+    .section{ margin-bottom:20px; padding:14px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.008), rgba(255,255,255,0.004)); border:1px solid rgba(255,255,255,0.02); transition: box-shadow 0.25s, transform 0.25s }
+    .section:hover{ transform: translateY(-4px); box-shadow: 0 8px 30px rgba(2,6,23,0.35) }
+    .section h2{ font-size:18px; margin-bottom:8px; position:relative; }
+    .section h2::after{ content:''; position:absolute; left:0; bottom:-6px; width:36px; height:3px; background:var(--accent); border-radius:2px }
+    p, ul{ color:var(--muted); font-size:15px; }
+    ul{ margin-left:18px; }
+    li{ margin-bottom:6px }
+
+    .muted-line{ height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent); margin:14px 0; border-radius:2px }
+
+    footer{ text-align:center; color:var(--muted); font-size:13px; margin-top:6px }
+
+    @media (max-width:940px){
+      .container{ grid-template-columns: 1fr; padding:20px }
+      .avatar{ width:120px; height:120px }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ animation:none !important; transition:none !important }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔹 Navbar -->
+  <div class="navbar">
+    <a href="index.html">Portofolio</a>
+    <a href="galeri.html">Galeri</a>
+  </div>
+
+  <div class="container">
+    <aside class="profile">
+      <div class="avatar">
+        <img src="profil.jpeg" alt="Foto Profil" />
+      </div>
+      <div class="name">Anugrah Restu Mannarai</div>
+      <div class="role">Mahasiswa • UNIVERSITAS NEGERI MAKASSAR</div>
+      <div class="about">
+        Halo! Saya Anugrah — seorang mahasiswa yang tertarik dengan teknologi, pemrograman, dan desain antarmuka. Saya suka membangun solusi sederhana yang memudahkan pengguna.
+      </div>
+
+      <div class="contact">
+        <div class="chip">📍 MAKASSAR</div>
+        <div class="chip">✉️ <a href="mailto:anugrahrestu12300@gmail.com" style="color:inherit;text-decoration:none">anugrahrestu12300@gmail.com</a></div>
+      </div>
+
+      <div class="socials">
+        <a href="https://wa.me/qr/6N2TDJPL26IHC1" target="_blank">WhatsApp</a>
+        <a href="https://www.tiktok.com/@angrhrest?_t=ZS-8zZzAsLny8W&_r=1" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/_anugrhrstu?igsh=MWU1NGhlZ3J0a3BhOA==" target="_blank">Instagram</a>
+        <a href="https://github.com/Mooza-ganteng" target="_blank">GitHub</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <h2>Perkenalan</h2>
+        <p>Perkenalkan, nama saya <strong>Anugrah Restu Mannarai</strong>. Asal Saya dari kabupaten jeneponto dan saya anak pertama dari tiga bersaudara, kenapa saya memiliki minat besar dalam dunia teknologi dan senang belajar hal-hal baru terutama di bidang pemrograman, dikarenakan waktu saya masih SMA/MA belum pernah mengenal apa itu komputer yang berkaitan dengan teknologi jadi saya tertarik dengan jurusan yang saya ambil saat ini yaitu fakultas teknik informatika dan komputer.</p>
+      </section>
+
+      <div class="muted-line" aria-hidden></div>
+
+      <section class="section">
+        <h2>Hobi</h2>
+        <ul>
+          <li>Belajar pemrograman dan membuat aplikasi sederhana.</li>
+          <li>Game Mobile.</li>
+          <li>Modifikasi Kendaraan.</li>
+          <li>Futsal.</li>
+        </ul>
+      </section>
+
+      <div class="muted-line" aria-hidden></div>
+
+      <section class="section">
+        <h2>Cita-cita</h2>
+        <p>Saya bercita-cita menjadi seorang pengembang perangkat lunak profesional yang dapat memberikan dampak positif bagi masyarakat melalui teknologi. Selain itu, saya ingin terus mengasah keterampilan di bidang desain dan inovasi agar bisa berkontribusi dalam menciptakan solusi kreatif di masa depan.</p>
+      </section>
+
+      <div class="muted-line" aria-hidden></div>
+
+      <!-- 🔹 Link ke Galeri -->
+      <section class="section">
+        <h2>Galeri</h2>
+        <p>Lihat koleksi foto saya di halaman galeri.</p>
+        <a href="galeri.html" style="color:var(--accent); font-weight:600; text-decoration:none;">📷 Buka Galeri</a>
+      </section>
+
+      <footer>© <span id="year"></span> Anugrah Restu Mannarai</footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

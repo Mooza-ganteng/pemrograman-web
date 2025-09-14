@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galeri Foto — Anugrah Restu Mannarai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1630;
+      color: #e6eef8;
+      margin: 0;
+      padding: 20px;
+      padding-top: 60px; /* supaya tidak ketimpa navbar */
+      text-align: center;
+    }
+
+    /* Navbar sama dengan index */
+    .navbar {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      padding: 12px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      backdrop-filter: blur(6px);
+    }
+    .navbar a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      background: #38bdf8;
+      color: #052028;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .navbar a:hover {
+      transform: translateY(-3px);
+      background: #7c3aed;
+      color: #fff;
+    }
+
+    h1 { color: #38bdf8; margin-bottom: 20px; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <!-- 🔹 Navbar Global -->
+  <div class="navbar">
+    <a href="portofolio1.html">⬅ Portofolio</a>
+    <a href="gallery.html">Galeri</a>
+  </div>
+
+  <h1>Galeri Foto</h1>
+  <div class="gallery">
+    <img src="foto1.jpeg" alt="Foto 1">
+    <img src="foto2.jpeg" alt="Foto 2">
+    <img src="foto3.jpeg" alt="Foto 3">
+    <img src="foto4.jpeg" alt="Foto 4">
+  </div>
+</body>
+</html>
