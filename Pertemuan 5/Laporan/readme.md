@@ -421,7 +421,7 @@ parseFloat("27A") → baca angka sebelum huruf → 27
 parseFloat("A27.5") → karakter pertama bukan angka → NaN
  OUTPUT:
  ![alt text](image.png)
-
+ 
 # Analisis file operasi aritmatika
  document.write("2 + 3 = " + (2 + 3) ); 
 document.write("<BR>");
@@ -551,7 +551,7 @@ Boolean: true (tipe: boolean)
  OUTPUT:
  ![alt text](image.png)
 
-# AnalIsis tugas no 2
+#_Analisis tugas no 2
  let data = ["Restu", 19, true, 85.5]; // string, integer, boolean, float
 data adalah array yang berisi elemen berbeda tipe:
 
@@ -634,7 +634,7 @@ Tampilkan hasil di <span id="hasil">.
 OUTPUT:
 ![alt text](image.png)
 
-# AnalIsis tugas no 4
+# Analisis tugas no 4
 <h3>Volume Kubus</h3>
 Sisi: <input type="text" id="sisi">
 <button onclick="kubus()">Hitung</button>
