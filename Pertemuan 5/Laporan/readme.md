@@ -379,114 +379,95 @@ Karena variabel global a telah diubah menjadi 8 di dalam fungsi,
 ![alt text](image.png)
 
 # Analisis file koversi tipe data
-<script lang="JavaScript">
-    <!--
- Membuka blok JavaScript.
- lang="JavaScript" adalah cara lama, sebaiknya cukup <script>.
-<!-- → komentar gaya lama, tidak perlu di browser modern.
+var a = parseInt("27");
+document.write("1." + a + "<br>");
 
-3. Percobaan parseInt()
-js
-Salin kode
-    var a = parseInt("27");
-    document.write("1." + a + "<br>");
- "27" → dikonversi ke bilangan bulat → 27.
- Output: 1.27
+a = parseInt("27.5");
+document.write("2." + a + "<br>");
 
-js
-Salin kode
-    a = parseInt("27.5");
-    document.write("2." + a + "<br>");
- "27.5" → parseInt hanya ambil angka bulat di depan → 27.
- Output: 2.27
+var a = parseInt("27A");
+document.write("3." + a + "<br>");
 
-js
-Salin kode
-    var a = parseInt("27A");
-    document.write("3." + a + "<br>");
- "27A" → angka 27 di depan valid, huruf diabaikan → 27.
- Output: 3.27
+a = parseInt("A27.5");
+document.write("4." + a + "<br>");
+Analisis:
 
-js
-Salin kode
-    a = parseInt("A27.5");
-    document.write("4." + a + "<br>");
- "A27.5" → diawali huruf, bukan angka → hasil NaN (Not a Number).
- Output: 4.NaN
+parseInt("27") → angka utuh → 27
 
-4. Percobaan parseFloat()
-js
-Salin kode
-    var b = parseFloat("27");
-    document.write("5." + b + "<br>");
- "27" → jadi bilangan pecahan → 27.
-Output: 5.27
+parseInt("27.5") → ambil bagian sebelum titik → 27
 
-js
-Salin kode
-    b = parseFloat("27.5");
-    document.write("6." + b + "<br>");
-"27.5" → jadi bilangan pecahan → 27.5.
- Output: 6.27.5
+parseInt("27A") → ambil angka sebelum huruf → 27
 
-js
-Salin kode
-    var b = parseFloat("27A");
-    document.write("7." + b + "<br>");
-"27A" → angka 27 valid di depan, huruf diabaikan → 27.
- Output: 7.27
+parseInt("A27.5") → karakter pertama bukan angka → NaN
+var b = parseFloat("27");
+document.write("5." + b + "<br>");
 
-js
-Salin kode
-    b = parseFloat("A27.5");
-    document.write("8." + b + "<br>");
- "A27.5" → mulai dengan huruf, tidak valid → NaN.
- Output: 8.NaN
+b = parseFloat("27.5");
+document.write("6." + b + "<br>");
+
+var b = parseFloat("27A");
+document.write("7." + b + "<br>");
+
+b = parseFloat("A27.5");
+document.write("8." + b + "<br>");
+Analisis:
+
+parseFloat("27") → angka utuh sebagai float → 27
+
+parseFloat("27.5") → angka desimal → 27.5
+
+parseFloat("27A") → baca angka sebelum huruf → 27
+
+parseFloat("A27.5") → karakter pertama bukan angka → NaN
  OUTPUT:
  ![alt text](image.png)
 
- # Analsisi file operasi aritmatika
- <SCRIPT LANGUAGE = "JavaScript"> 
-    <!-- 
- Membuka blok JavaScript.
-LANGUAGE="JavaScript" adalah cara lama, sekarang cukup <script>.
-<!-- → dulu dipakai untuk menyembunyikan kode JS dari browser lama.
-
-3. Operasi matematika
-js
-Salin kode
-document.write("2 + 3 = " + (2 + 3) ); 
+# Analisis file operasi aritmatika
+ document.write("2 + 3 = " + (2 + 3) ); 
 document.write("<BR>");
- Menampilkan hasil penjumlahan 2 + 3 = 5 lalu pindah baris.
+(2 + 3) → operasi penjumlahan integer → 5
 
-js
+Output:
+
+Salin kode
+2 + 3 = 5
+Blok 2: Pengurangan
+javascript
 Salin kode
 document.write("20 + 3 = " + (20 - 3) ); 
 document.write("<BR>");
- Ada kesalahan logika teks:
+Perhatikan: teks menulis "20 + 3" tapi operasi yang dilakukan adalah (20 - 3) → hasil 17
 
-Tulisan: "20 + 3 ="
+Output:
 
-Operasi yang dipakai: (20 - 3) → hasil 17
- Output: 20 + 3 = 17 (seharusnya teksnya 20 - 3).
+Salin kode
+20 + 3 = 17
+ Catatan: ini typo di teks, seharusnya "20 - 3" agar sesuai dengan operasi.
 
-js
+Blok 3: Perkalian
+javascript
 Salin kode
 document.write("20* 3 = " + (2 * 3) ); 
 document.write("<BR>");
- Lagi-lagi ada ketidaksesuaian:
+Teks menulis "20* 3" tapi operasi (2 * 3) → hasil 6
 
-Tulisan: "20* 3 ="
+Output:
 
-Operasi: (2 * 3) → hasil 6
- Output: 20* 3 = 6 (seharusnya 20 * 3 = 60).
+Salin kode
+20* 3 = 6
+ Catatan: lagi-lagi teks dan operasi tidak sesuai. Seharusnya (20 * 3) jika ingin sesuai teks.
 
-js
+Blok 4: Pembagian
+javascript
 Salin kode
 document.write("40 / 3 = " + (40 / 3) ); 
 document.write("<BR>");
- Operasi pembagian 40 / 3 = 13.333333333333334
- Output: 40 / 3 = 13.333333333333334
+(40 / 3) → operasi pembagian → hasil 13.333333333333334
+
+Output:
+
+Salin kode
+40 / 3 = 13.333333333333334
  OUTPUT:
  ![alt text](image.png)
 
@@ -499,7 +480,7 @@ Pesan: "Nilai (0-100):"
 Default nilai: 0
  Nilai yang dimasukkan user disimpan dalam variabel nilai (tipe string).
 
-4. Operator Ternary (?)
+ Operator Ternary (?)
 js
 Salin kode
 var hasil = (nilai >= 60) ? "Lulus" : "Tidak Lulus"; 
@@ -509,7 +490,7 @@ Jika kondisi nilai >= 60 benar → hasil = "Lulus"
 
 Jika kondisi salah → hasil = "Tidak Lulus"
 
-5. Menampilkan hasil
+ Menampilkan hasil
 js
 Salin kode
 document.write("Hasil: " + hasil); 
@@ -523,80 +504,85 @@ OUTPUT:
 ![alt text](image-1.png)
 
 # Analisis tugas no 1
-<script>
-    let angkaString = "123";      // string
- Mendefinisikan variabel angkaString dengan nilai "123" (tipe string).
+let angkaString = "123";      // string
+let angkaInt = parseInt(angkaString); // konversi ke integer
+angkaString adalah string "123".
 
-js
-Salin kode
-    let angkaInt = parseInt(angkaString); // konversi ke integer
- "123" dikonversi ke integer → hasil: 123.
+parseInt(angkaString) → mengubah string "123" menjadi integer 123.
 
-js
-Salin kode
-    let angkaFloat = parseFloat("45.67"); // konversi ke float
- "45.67" dikonversi ke float → hasil: 45.67.
+Tipe data setelah konversi: number
 
-js
-Salin kode
-    let bool = Boolean(1);        // konversi ke boolean
- 1 dalam konteks Boolean → true.
- Catatan: hanya 0, null, undefined, NaN, "" (string kosong) yang jadi false.
+Output terkait:
 
-3. Menampilkan hasil + tipe data
-js
+typescript
 Salin kode
-    document.write("String: " + angkaString + " (tipe: " + typeof angkaString + ")<br>");
- Output: String: 123 (tipe: string)
+String: 123 (tipe: string)
+Integer: 123 (tipe: number)
+Blok 2: String → Float
+javascript
+Salin kode
+let angkaFloat = parseFloat("45.67"); // konversi ke float
+"45.67" adalah string yang mewakili angka desimal.
 
-js
-Salin kode
-    document.write("Integer: " + angkaInt + " (tipe: " + typeof angkaInt + ")<br>");
- Output: Integer: 123 (tipe: number)
+parseFloat("45.67") → mengubah menjadi floating point number 45.67.
 
-js
-Salin kode
-    document.write("Float: " + angkaFloat + " (tipe: " + typeof angkaFloat + ")<br>");
- Output: Float: 45.67 (tipe: number)
+Tipe data: number
 
-js
+Output terkait:
+
+less
 Salin kode
-    document.write("Boolean: " + bool + " (tipe: " + typeof bool + ")<br>");
- Output: Boolean: true (tipe: boolean)
+Float: 45.67 (tipe: number)
+Blok 3: Number → Boolean
+javascript
+Salin kode
+let bool = Boolean(1);        // konversi ke boolean
+Boolean(1) → semua angka selain 0 dianggap true dalam JavaScript.
+
+Jadi bool = true.
+
+Tipe data: boolean
+
+Output terkait:
+
+sql
+Salin kode
+Boolean: true (tipe: boolean)
  OUTPUT:
  ![alt text](image.png)
 
- # Analsisi tugas no 2
- <script>
-    let angkaString = "123";      // string
-    let angkaInt = parseInt(angkaString); // konversi ke integer
-    let angkaFloat = parseFloat("45.67"); // konversi ke float
-    let bool = Boolean(1);        // konversi ke boolean
- Penjelasan per baris:
+# AnalIsis tugas no 2
+ let data = ["Restu", 19, true, 85.5]; // string, integer, boolean, float
+data adalah array yang berisi elemen berbeda tipe:
 
-angkaString → nilai "123" bertipe string.
+"Restu" → string
 
-parseInt(angkaString) → konversi string "123" jadi integer 123.
+19 → number (integer)
 
-parseFloat("45.67") → konversi string "45.67" jadi float 45.67.
+true → boolean
 
-Boolean(1) → konversi angka 1 jadi true (boolean).
-document.write("String: " + angkaString + " (tipe: " + typeof angkaString + ")<br>");
-    document.write("Integer: " + angkaInt + " (tipe: " + typeof angkaInt + ")<br>");
-    document.write("Float: " + angkaFloat + " (tipe: " + typeof angkaFloat + ")<br>");
-    document.write("Boolean: " + bool + " (tipe: " + typeof bool + ")<br>");
-</script>
-Penjelasan:
+85.5 → number (float)
 
-document.write() menulis ke halaman web.
+JavaScript boleh mencampur tipe data dalam satu array.
 
-typeof digunakan untuk menampilkan tipe data variabel.
+Blok 2: Mengakses Elemen Array
+javascript
+Salin kode
+document.write("Nama: " + data[0] + "<br>");
+document.write("Umur: " + data[1] + "<br>");
+document.write("Status Mahasiswa: " + data[2] + "<br>");
+document.write("Nilai: " + data[3] + "<br>");
+data[0] → "Restu" → Output: Nama: Restu
 
-<br> → membuat baris baru agar hasil tidak berdempetan.
+data[1] → 19 → Output: Umur: 19
+
+data[2] → true → Output: Status Mahasiswa: true
+
+data[3] → 85.5 → Output: Nilai: 85.5
 OUTPUT:
 ![alt text](image.png)
 
-# Analsisi tugas no 3
+ # AnalIsis tugas no 3
 <input type="text" id="num1" placeholder="Angka 1">
 <input type="text" id="num2" placeholder="Angka 2"><br><br>
  Penjelasan:
@@ -648,7 +634,7 @@ Tampilkan hasil di <span id="hasil">.
 OUTPUT:
 ![alt text](image.png)
 
-# Analsisi tugas no 4
+# AnalIsis tugas no 4
 <h3>Volume Kubus</h3>
 Sisi: <input type="text" id="sisi">
 <button onclick="kubus()">Hitung</button>
