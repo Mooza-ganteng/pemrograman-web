@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rumus Bangun Ruang</title>
+</head>
+<body>
+  <h2>Hitungan Bangun Ruang</h2>
+
+  <!-- Kubus -->
+  <h3>Volume Kubus</h3>
+  Sisi: <input type="text" id="sisi">
+  <button onclick="kubus()">Hitung</button>
+  <p>Hasil: <span id="hasilKubus"></span></p>
+
+  <!-- Balok -->
+  <h3>Volume Balok</h3>
+  Panjang: <input type="text" id="p">
+  Lebar: <input type="text" id="l">
+  Tinggi: <input type="text" id="t">
+  <button onclick="balok()">Hitung</button>
+  <p>Hasil: <span id="hasilBalok"></span></p>
+
+  <!-- Tabung -->
+  <h3>Volume Tabung</h3>
+  Jari-jari: <input type="text" id="r">
+  Tinggi: <input type="text" id="tinggiTabung">
+  <button onclick="tabung()">Hitung</button>
+  <p>Hasil: <span id="hasilTabung"></span></p>
+
+  <script>
+    function kubus() {
+      let s = parseFloat(document.getElementById("sisi").value);
+      document.getElementById("hasilKubus").innerText = s * s * s;
+    }
+
+    function balok() {
+      let p = parseFloat(document.getElementById("p").value);
+      let l = parseFloat(document.getElementById("l").value);
+      let t = parseFloat(document.getElementById("t").value);
+      document.getElementById("hasilBalok").innerText = p * l * t;
+    }
+
+    function tabung() {
+      let r = parseFloat(document.getElementById("r").value);
+      let t = parseFloat(document.getElementById("tinggiTabung").value);
+      document.getElementById("hasilTabung").innerText = (Math.PI * r * r * t).toFixed(2);
+    }
+  </script>
+</body>
+</html>

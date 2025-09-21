@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konversi Tipe Data</title>
+</head>
+<body>
+  <h2>Konversi Tipe Data</h2>
+  <script>
+    let angkaString = "123";      // string
+    let angkaInt = parseInt(angkaString); // konversi ke integer
+    let angkaFloat = parseFloat("45.67"); // konversi ke float
+    let bool = Boolean(1);        // konversi ke boolean
+
+    document.write("String: " + angkaString + " (tipe: " + typeof angkaString + ")<br>");
+    document.write("Integer: " + angkaInt + " (tipe: " + typeof angkaInt + ")<br>");
+    document.write("Float: " + angkaFloat + " (tipe: " + typeof angkaFloat + ")<br>");
+    document.write("Boolean: " + bool + " (tipe: " + typeof bool + ")<br>");
+  </script>
+</body>
+</html>
