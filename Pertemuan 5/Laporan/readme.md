@@ -57,11 +57,8 @@ Salin kode
         </BODY> 
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
-
-![Output 1](Gambar_output/output1.jpeg)
-
-
-# Analisis file Even tertentu
+ 
+ # Analisis file Even tertentu
 <!DOCTYPE html> 
  Mendefinisikan bahwa dokumen ini menggunakan HTML5.
 
@@ -135,13 +132,10 @@ html
 Salin kode
     </body> 
 </html> 
- Menutup body dan HTML.
-
- OUTPUT:
- <img src="output2.jpeg" alt="output 2">
+ Menutup body dan HTML
 
 
- # Analisis file sederhana
+# Analisis file sederhana
  <HTML> 
  Membuka dokumen HTML. Semua isi halaman berada di dalamnya.
 
@@ -184,10 +178,7 @@ Salin kode
     </BODY> 
 </HTML> 
  Menutup <BODY> dan dokumen HTML.
- Karena <BODY> tidak pernah dibuka sebelumnya, maka ini tidak valid.
-
- OUTPUT:
- <img src="output3.jpeg" alt="output 3">
+ Karena <BODY> tidak pernah dibuka sebelumnya, maka ini tidak valid
 
 
  # Analisis file Memasukkan Data
