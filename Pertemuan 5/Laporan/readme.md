@@ -58,6 +58,9 @@ Salin kode
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
 
+ OUTPUT:
+ <img src="output1.jpeg" alt="Foto 1">
+
 
 # Analisis file Even tertentu
 <!DOCTYPE html> 
@@ -135,6 +138,9 @@ Salin kode
 </html> 
  Menutup body dan HTML.
 
+ OUTPUT:
+ <img src="output2.jpeg" alt="Foto 2">
+
 
  # Analisis file sederhana
  <HTML> 
@@ -180,6 +186,9 @@ Salin kode
 </HTML> 
  Menutup <BODY> dan dokumen HTML.
  Karena <BODY> tidak pernah dibuka sebelumnya, maka ini tidak valid.
+
+ OUTPUT:
+ <img src="output3.jpeg" alt="Foto 3">
 
 
  # Analisis file Memasukkan Data
