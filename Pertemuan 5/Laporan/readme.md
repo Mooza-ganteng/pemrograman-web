@@ -57,7 +57,8 @@ Salin kode
         </BODY> 
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
- OUTPUT:
+
+ # OUTPUT:
  <img src="Gambar output/output1.jpeg">
  
  # Analisis file Even tertentu
@@ -136,6 +137,9 @@ Salin kode
 </html> 
  Menutup body dan HTML
 
+ # OUTPUT:
+ <img src="Gambar output/output2.jpeg">
+
 
 # Analisis file sederhana
  <HTML> 
@@ -182,6 +186,8 @@ Salin kode
  Menutup <BODY> dan dokumen HTML.
  Karena <BODY> tidak pernah dibuka sebelumnya, maka ini tidak valid
 
+# OUTPUT:
+<img src="Gambar output/output3.jpeg">
 
  # Analisis file Memasukkan Data
  <HTML> 
@@ -241,7 +247,10 @@ Salin kode
         </BODY> 
 </HTML>
  Menutup <BODY> dan dokumen HTML.
- 
+
+ # OUTPUT:
+ <img src="Gambar output/output4.jpeg">
+
 
  # Analisis file jendelah contoh 1
  <SCRIPT LANGUAGE = JavaScript > 
@@ -265,6 +274,9 @@ User harus klik OK untuk menutup dialog.
 // → komentar dalam JavaScript. Karena tidak ada kode di belakangnya, ini tidak berpengaruh.
 
 </SCRIPT> → menutup blok script.
+
+# OUTPUT:
+<img src="Gambar output/output5.jpeg">
 
 
 # Analsis file contoh 2
@@ -299,6 +311,10 @@ Jika klik Cancel → tampil: Jawaban Anda: false
 
 </SCRIPT> → menutup blok script.
 
+# OUTPUT:
+<img src="Gambar output/lj output5.jpeg">
+<img src="Gambar output/lj.output5.jpeg">
+
 
 # Analsisi file Mendeklarasikan Variabel
 <script>
@@ -325,6 +341,8 @@ Menuliskan hasilnya langsung ke halaman web.
 
 </script> → menutup blok script.
 
+# OUTPUT:
+<img src="Gambar output/output6.jpeg">
 
 # Analisis file global&lokal
 <script language= "Javascript" >
@@ -374,6 +392,9 @@ Karena fungsi mengubah a, sekarang a = 8.
 Output: "nilai dari a adalah 8".
 
 </script> → menutup blok script.
+
+# OUTPUT:
+<img src="Gambar output/output7.jpeg">
 
 # Analisis file konversi tipe data
 var a = parseInt("27");
@@ -449,6 +470,9 @@ Karena string diawali huruf "A", tidak ada angka valid di awal.
 Hasilnya NaN.
 Output: 8.NaN
 
+# OUTPUT:
+<img src="Gambar output/output8.jpeg">
+
 # Analisis file Operasi Aritmatika
 document.write("2 + 3 = " + (2 + 3) ); 
 document.write("<BR>");
@@ -486,6 +510,10 @@ Analisis:
 Operasi pembagian 40 / 3 = 13.3333333... (bilangan desimal).
 Output: "40 / 3 = 13.333333333333334" (hasil default JS).
 
+# OUTPUT:
+<img src="Gambar output/output9.jpeg">
+
+
 # Analisis file operasi Logika Pembanding
 ar nilai = prompt("Nilai (0-100): ", 0);
 Analisis:
@@ -510,6 +538,11 @@ Analisis:
 Menuliskan hasil ke halaman web.
 Misalnya user input 75 → "Hasil: Lulus".
 Jika input 50 → "Hasil: Tidak Lulus".
+
+# OUTPUT:
+<img src="Gambar output/output10.jpeg">
+<img src="Gambar output/LJ output10.jpeg">
+
 
 # Analisis file tugas 1
 let angkaString = "123";      // string
@@ -543,6 +576,10 @@ String: 123 (tipe: string)
 Integer: 123 (tipe: number)
 Float: 45.67 (tipe: number)Boolean: true (tipe: boolean)
 
+# OUTPUT:
+<img src="Gambar output/outputtugas1.jpeg">
+
+
 # Analisis file tugas 2
 let data = ["Restu", 19, true, 85.5]; // string, integer, boolean, float
 Analisis:
@@ -566,6 +603,10 @@ data[0] → "Restu" → ditampilkan sebagai Nama: Restu.
 data[1] → 19 → ditampilkan sebagai Umur: 19.
 data[2] → true → ditampilkan sebagai Status Mahasiswa: true.
 data[3] → 85.5 → ditampilkan sebagai Nilai: 85.5.
+
+# OUTPUT:
+<img src="Gambar output/outputtugas2.jpeg">
+
 
 # Analisis file tugas 3
 <input type="text" id="num1" placeholder="Angka 1">
@@ -625,6 +666,10 @@ if...else if... → cek operator:
 '/' → pembagian.
 Hasil disimpan di variabel result.
 document.getElementById("hasil").innerText = result; → menampilkan hasil ke <span id="hasil">.
+
+# OUTPUT:
+<img src="Gambar output/outputtugas3.jpeg">
+
 
 # Analisis file tugas 4
 <h3>Volume Kubus</h3>
@@ -700,3 +745,6 @@ Ambil jari-jari r dan tinggi t.
 Rumus volume tabung = π × r² × t.
 Math.PI = konstanta π (3.14159…).
 .toFixed(2) → membatasi hasil 2 angka desimal.
+
+# OUTPUT:
+<img src="Gambar output/outputtugas4.jpeg">
