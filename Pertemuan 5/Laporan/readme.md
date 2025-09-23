@@ -59,7 +59,7 @@ Salin kode
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
 
  OUTPUT:
- <img src="output1.jpeg" alt="Foto 1">
+ <img src="output1.jpeg" alt="output 1">
 
 
 # Analisis file Even tertentu
@@ -139,7 +139,7 @@ Salin kode
  Menutup body dan HTML.
 
  OUTPUT:
- <img src="output2.jpeg" alt="Foto 2">
+ <img src="output2.jpeg" alt="output 2">
 
 
  # Analisis file sederhana
@@ -188,7 +188,7 @@ Salin kode
  Karena <BODY> tidak pernah dibuka sebelumnya, maka ini tidak valid.
 
  OUTPUT:
- <img src="output3.jpeg" alt="Foto 3">
+ <img src="output3.jpeg" alt="output 3">
 
 
  # Analisis file Memasukkan Data
