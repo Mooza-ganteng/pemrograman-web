@@ -57,8 +57,7 @@ Salin kode
         </BODY> 
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
-OUTPUT:
-![alt text](image.png)
+
 
 # Analisis file Even tertentu
 <!DOCTYPE html> 
@@ -135,8 +134,7 @@ Salin kode
     </body> 
 </html> 
  Menutup body dan HTML.
- OUTPUT:
- ![alt text](image.png)
+
 
  # Analisis file sederhana
  <HTML> 
@@ -182,8 +180,7 @@ Salin kode
 </HTML> 
  Menutup <BODY> dan dokumen HTML.
  Karena <BODY> tidak pernah dibuka sebelumnya, maka ini tidak valid.
- OUTPUT:
- ![alt text](image-1.png)
+
 
  # Analisis file Memasukkan Data
  <HTML> 
@@ -243,8 +240,7 @@ Salin kode
         </BODY> 
 </HTML>
  Menutup <BODY> dan dokumen HTML.
- OUTPUT:
- ![alt text](image.png)
+ 
 
  # Analisis file jendelah contoh 1
  <SCRIPT LANGUAGE = JavaScript > 
@@ -268,8 +264,7 @@ User harus klik OK untuk menutup dialog.
 // → komentar dalam JavaScript. Karena tidak ada kode di belakangnya, ini tidak berpengaruh.
 
 </SCRIPT> → menutup blok script.
-OUTPUT:
-![alt text](image.png)
+
 
 # Analsis file contoh 2
         <SCRIPT LANGUAGE = "JavaScript"> 
@@ -302,9 +297,7 @@ Jika klik OK → tampil: Jawaban Anda: true
 Jika klik Cancel → tampil: Jawaban Anda: false
 
 </SCRIPT> → menutup blok script.
-OUTPUT:
-![alt text](image.png)
-![alt text](image-1.png)
+
 
 # Analsisi file Mendeklarasikan Variabel
 <script>
@@ -330,8 +323,7 @@ Menghitung hasil perkalian: 1234 × 3 = 3702
 Menuliskan hasilnya langsung ke halaman web.
 
 </script> → menutup blok script.
-OUTPUT:
-![alt text](image.png)
+
 
 # Analisis file global&lokal
 <script language= "Javascript" >
@@ -362,253 +354,250 @@ a = b * 2; → memodifikasi variabel global a dengan nilai baru hasil perkalian.
 return a; → mengembalikan nilai a.
 
 document.write("dua kali dari ", b, " adalah ", Perkalian_Dengan2(b));
+document.write(" nilai dari a adalah ", a);
 
-Menuliskan teks ke halaman.
+document.write menampilkan teks ke halaman web.
 
-Nilai b = 4.
+Pertama:
+
+b nilainya 4.
 
 Perkalian_Dengan2(b) = 4 * 2 = 8.
 
-Hasil di browser: dua kali dari 4 adalah 8.
+Hasil output: "dua kali dari 4 adalah 8".
 
-document.write(" nilai dari a adalah ", a);
+Kedua:
 
-Karena variabel global a telah diubah menjadi 8 di dalam fungsi,
- hasilnya:nilai dari a adalah 8
- OUTPUT:
-![alt text](image.png)
+Karena fungsi mengubah a, sekarang a = 8.
 
-# Analisis file koversi tipe data
+Output: "nilai dari a adalah 8".
+
+</script> → menutup blok script.
+
+# Analisis file konversi tipe data
 var a = parseInt("27");
 document.write("1." + a + "<br>");
+Analisis:
+parseInt("27") mengubah string "27" menjadi angka bulat 27.
+Output: 1.27
 
+parseInt("27.5")
+javascript
+Salin kode
 a = parseInt("27.5");
 document.write("2." + a + "<br>");
+Analisis:
+parseInt("27.5") hanya membaca integer di depan, jadi hasilnya 27 (angka setelah titik diabaikan).
+Output: 2.27
 
+parseInt("27A")
+javascript
+Salin kode
 var a = parseInt("27A");
 document.write("3." + a + "<br>");
+ Analisis:
+parseInt("27A") membaca dari awal: "27" valid, lalu berhenti saat ketemu huruf.
+Hasilnya 27.
+Output: 3.27
 
+parseInt("A27.5")
+javascript
+Salin kode
 a = parseInt("A27.5");
 document.write("4." + a + "<br>");
-Analisis:
+ Analisis:
+Karena string diawali huruf "A", parseInt tidak menemukan angka valid di depan, hasilnya NaN (Not a Number).
+Output: 4.NaN
 
-parseInt("27") → angka utuh → 27
-
-parseInt("27.5") → ambil bagian sebelum titik → 27
-
-parseInt("27A") → ambil angka sebelum huruf → 27
-
-parseInt("A27.5") → karakter pertama bukan angka → NaN
+parseFloat("27")
+javascript
+Salin kode
 var b = parseFloat("27");
 document.write("5." + b + "<br>");
+ Analisis:
+parseFloat("27") mengubah string "27" menjadi angka 27.
+Output: 5.27
 
+parseFloat("27.5")
+javascript
+Salin kode
 b = parseFloat("27.5");
 document.write("6." + b + "<br>");
+Analisis:
+parseFloat("27.5") membaca string desimal lengkap.
+Hasilnya 27.5.
+Output: 6.27.5
 
+parseFloat("27A")
+javascript
+Salin kode
 var b = parseFloat("27A");
 document.write("7." + b + "<br>");
-
-b = parseFloat("A27.5");
-document.write("8." + b + "<br>");
 Analisis:
+parseFloat("27A") membaca dari awal: "27" valid, lalu berhenti di "A".
+Hasilnya 27.
+Output: 7.27
 
-parseFloat("27") → angka utuh sebagai float → 27
-
-parseFloat("27.5") → angka desimal → 27.5
-
-parseFloat("27A") → baca angka sebelum huruf → 27
-
-parseFloat("A27.5") → karakter pertama bukan angka → NaN
- OUTPUT:
- ![alt text](image.png)
- 
-# Analisis file operasi aritmatika
- document.write("2 + 3 = " + (2 + 3) ); 
-document.write("<BR>");
-(2 + 3) → operasi penjumlahan integer → 5
-
-Output:
-
+parseFloat("A27.5")
+javascript
 Salin kode
-2 + 3 = 5
-Blok 2: Pengurangan
+b = parseFloat("A27.5");
+document.write("8." + b + "<br>"); 
+Analisis:
+Karena string diawali huruf "A", tidak ada angka valid di awal.
+Hasilnya NaN.
+Output: 8.NaN
+
+# Analisis file Operasi Aritmatika
+document.write("2 + 3 = " + (2 + 3) ); 
+document.write("<BR>");
+Analisis:
+2 + 3 = 5 → operasi penjumlahan.
+Ditampilkan: "2 + 3 = 5"
+<BR> membuat baris baru.
+
+Baris Kedua
 javascript
 Salin kode
 document.write("20 + 3 = " + (20 - 3) ); 
 document.write("<BR>");
-Perhatikan: teks menulis "20 + 3" tapi operasi yang dilakukan adalah (20 - 3) → hasil 17
+Analisis:
+Tulisan di string: "20 + 3 =" → seolah-olah operasi penjumlahan.
+Tapi di dalam kurung justru (20 - 3) → pengurangan, hasilnya 17.
+di outputnya: "20 + 3 = 17" ⚠️ (tidak sesuai label).
 
-Output:
-
-Salin kode
-20 + 3 = 17
- Catatan: ini typo di teks, seharusnya "20 - 3" agar sesuai dengan operasi.
-
-Blok 3: Perkalian
+Baris Ketiga
 javascript
 Salin kode
 document.write("20* 3 = " + (2 * 3) ); 
 document.write("<BR>");
-Teks menulis "20* 3" tapi operasi (2 * 3) → hasil 6
+Analisis:
+Tulisan di string: "20* 3 =" → seolah 20 × 3.
+Tapi perhitungan (2 * 3) → hasilnya 6.
+Jadi output: "20 3 = 6"* ⚠️ (salah label juga).
 
-Output:
-
-Salin kode
-20* 3 = 6
- Catatan: lagi-lagi teks dan operasi tidak sesuai. Seharusnya (20 * 3) jika ingin sesuai teks.
-
-Blok 4: Pembagian
+Baris Keempat
 javascript
 Salin kode
 document.write("40 / 3 = " + (40 / 3) ); 
 document.write("<BR>");
-(40 / 3) → operasi pembagian → hasil 13.333333333333334
+Analisis:
+Operasi pembagian 40 / 3 = 13.3333333... (bilangan desimal).
+Output: "40 / 3 = 13.333333333333334" (hasil default JS).
 
-Output:
+# Analisis file operasi Logika Pembanding
+ar nilai = prompt("Nilai (0-100): ", 0);
+Analisis:
+prompt menampilkan dialog input dengan pesan "Nilai (0-100): " dan nilai default 0.
+Input dari user disimpan ke variabel nilai.
+Nilai hasil prompt bertipe string, tapi saat dibandingkan dengan angka, JavaScript otomatis mengonversinya ke number jika memungkinkan.
 
+Operator Ternary ? :
+javascript
 Salin kode
-40 / 3 = 13.333333333333334
- OUTPUT:
- ![alt text](image.png)
+var hasil = (nilai >= 60) ? "Lulus" : "Tidak Lulus";
+Analisis:
+Operator ternary adalah bentuk singkat if ... else.
+Jika nilai >= 60 → variabel hasil berisi "Lulus".
+Jika nilai < 60 → variabel hasil berisi "Tidak Lulus".
 
- # Analisis file operator logika pembanding
- var nilai = prompt("Nilai (0-100): ", 0); 
- prompt() → membuat dialog input untuk pengguna.
-
-Pesan: "Nilai (0-100):"
-
-Default nilai: 0
- Nilai yang dimasukkan user disimpan dalam variabel nilai (tipe string).
-
- Operator Ternary (?)
-js
+Menampilkan Hasil
+javascript
 Salin kode
-var hasil = (nilai >= 60) ? "Lulus" : "Tidak Lulus"; 
- Fungsi operator ? :
+document.write("Hasil: " + hasil);
+Analisis:
+Menuliskan hasil ke halaman web.
+Misalnya user input 75 → "Hasil: Lulus".
+Jika input 50 → "Hasil: Tidak Lulus".
 
-Jika kondisi nilai >= 60 benar → hasil = "Lulus"
-
-Jika kondisi salah → hasil = "Tidak Lulus"
-
- Menampilkan hasil
-js
-Salin kode
-document.write("Hasil: " + hasil); 
- Menulis teks ke halaman:
-
-Jika nilai ≥ 60 → Hasil: Lulus
-
-Jika nilai < 60 → Hasil: Tidak Lulus
-OUTPUT:
-![alt text](image.png)
-![alt text](image-1.png)
-
-# Analisis tugas no 1
+# Analisis file tugas 1
 let angkaString = "123";      // string
 let angkaInt = parseInt(angkaString); // konversi ke integer
-angkaString adalah string "123".
+let angkaFloat = parseFloat("45.67"); // konversi ke float
+let bool = Boolean(1);        // konversi ke boolean
+Analisis:
+let angkaString = "123";
+→ menyimpan string "123".
+parseInt(angkaString)
+→ konversi "123" menjadi integer 123.
+parseFloat("45.67")
+→ konversi string "45.67" menjadi number desimal 45.67.
+Boolean(1)
+→ konversi angka 1 menjadi true.
+(aturan: 0 → false, selain 0 → true).
 
-parseInt(angkaString) → mengubah string "123" menjadi integer 123.
-
-Tipe data setelah konversi: number
-
-Output terkait:
-
+Output ke Halaman
+javascript
+Salin kode
+document.write("String: " + angkaString + " (tipe: " + typeof angkaString + ")<br>");
+document.write("Integer: " + angkaInt + " (tipe: " + typeof angkaInt + ")<br>");
+document.write("Float: " + angkaFloat + " (tipe: " + typeof angkaFloat + ")<br>");
+document.write("Boolean: " + bool + " (tipe: " + typeof bool + ")<br>");
+Analisis:
+typeof dipakai untuk mengetahui tipe data variabel.
+Output yang muncul:
 typescript
 Salin kode
 String: 123 (tipe: string)
 Integer: 123 (tipe: number)
-Blok 2: String → Float
-javascript
-Salin kode
-let angkaFloat = parseFloat("45.67"); // konversi ke float
-"45.67" adalah string yang mewakili angka desimal.
+Float: 45.67 (tipe: number)Boolean: true (tipe: boolean)
 
-parseFloat("45.67") → mengubah menjadi floating point number 45.67.
+# Analisis file tugas 2
+let data = ["Restu", 19, true, 85.5]; // string, integer, boolean, float
+Analisis:
+data adalah array dengan 4 elemen:
+data[0] = "Restu" → string
+data[1] = 19 → integer (number)
+data[2] = true → boolean
+data[3] = 85.5 → float (number desimal)
+Di JavaScript, array boleh berisi berbagai tipe data dalam satu variabel.
 
-Tipe data: number
-
-Output terkait:
-
-less
-Salin kode
-Float: 45.67 (tipe: number)
-Blok 3: Number → Boolean
-javascript
-Salin kode
-let bool = Boolean(1);        // konversi ke boolean
-Boolean(1) → semua angka selain 0 dianggap true dalam JavaScript.
-
-Jadi bool = true.
-
-Tipe data: boolean
-
-Output terkait:
-
-sql
-Salin kode
-Boolean: true (tipe: boolean)
- OUTPUT:
- ![alt text](image.png)
-
-#_Analisis tugas no 2
- let data = ["Restu", 19, true, 85.5]; // string, integer, boolean, float
-data adalah array yang berisi elemen berbeda tipe:
-
-"Restu" → string
-
-19 → number (integer)
-
-true → boolean
-
-85.5 → number (float)
-
-JavaScript boleh mencampur tipe data dalam satu array.
-
-Blok 2: Mengakses Elemen Array
+Menampilkan Elemen Array
 javascript
 Salin kode
 document.write("Nama: " + data[0] + "<br>");
 document.write("Umur: " + data[1] + "<br>");
 document.write("Status Mahasiswa: " + data[2] + "<br>");
 document.write("Nilai: " + data[3] + "<br>");
-data[0] → "Restu" → Output: Nama: Restu
+Analisis:
+document.write() dipakai untuk menulis ke halaman.
+data[0] → "Restu" → ditampilkan sebagai Nama: Restu.
+data[1] → 19 → ditampilkan sebagai Umur: 19.
+data[2] → true → ditampilkan sebagai Status Mahasiswa: true.
+data[3] → 85.5 → ditampilkan sebagai Nilai: 85.5.
 
-data[1] → 19 → Output: Umur: 19
-
-data[2] → true → Output: Status Mahasiswa: true
-
-data[3] → 85.5 → Output: Nilai: 85.5
-OUTPUT:
-![alt text](image.png)
-
- # AnalIsis tugas no 3
+# Analisis file tugas 3
 <input type="text" id="num1" placeholder="Angka 1">
 <input type="text" id="num2" placeholder="Angka 2"><br><br>
- Penjelasan:
+Analisis:
+Dua kotak input teks:
+id="num1" untuk angka pertama.
+id="num2" untuk angka kedua.
+placeholder memberi teks bayangan sebelum user mengetik.
+<br><br> memberi jarak baris.
 
-id="num1" dan id="num2" → digunakan untuk mengambil nilai lewat JavaScript.
-
-placeholder → teks petunjuk di kotak input.
-
-<br><br> → membuat jarak antar elemen input dan tombol.
+Tombol Operasi
+html
+Salin kode
 <button onclick="hitung('+')">+</button>
 <button onclick="hitung('-')">-</button>
 <button onclick="hitung('*')">×</button>
 <button onclick="hitung('/')">÷</button>
- Penjelasan:
+Analisis:
+Setiap tombol memanggil fungsi hitung(operator) dengan parameter berbeda (+, -, *, /).
+Klik tombol → fungsi hitung dieksekusi.
 
-Setiap tombol memanggil fungsi hitung() dengan parameter operator (+, -, *, /).
- Tempat Menampilkan Hasil
+Tempat Menampilkan Hasil
 html
 Salin kode
 <p>Hasil: <span id="hasil"></span></p>
- Penjelasan:
+Analisis:
+Hasil perhitungan akan ditampilkan di dalam <span id="hasil">.
+Awalnya kosong, nanti diisi dengan JavaScript.
 
-<span id="hasil"> → tempat menampilkan hasil kalkulasi.
-
-Nilai innerText dari <span> akan diubah lewat JavaScript.
-<script>
+Fungsi JavaScript
+javascript
+Salin kode
 function hitung(operator) {
   let a = parseFloat(document.getElementById("num1").value);
   let b = parseFloat(document.getElementById("num2").value);
@@ -621,96 +610,92 @@ function hitung(operator) {
 
   document.getElementById("hasil").innerText = result;
 }
-</script>
- Penjelasan:
+Analisis:
+document.getElementById("num1").value → ambil isi input pertama.
+parseFloat() → ubah string ke number (supaya bisa dihitung).
+if...else if... → cek operator:
 
-Ambil nilai input num1 dan num2 → dikonversi ke angka (parseFloat).
+'+' → penjumlahan.
 
-Tentukan operator yang dikirim dari tombol.
+'-' → pengurangan.
 
-Lakukan operasi sesuai operator.
+'*' → perkalian.
 
-Tampilkan hasil di <span id="hasil">.
-OUTPUT:
-![alt text](image.png)
+'/' → pembagian.
+Hasil disimpan di variabel result.
+document.getElementById("hasil").innerText = result; → menampilkan hasil ke <span id="hasil">.
 
-# Analisis tugas no 4
+# Analisis file tugas 4
 <h3>Volume Kubus</h3>
 Sisi: <input type="text" id="sisi">
 <button onclick="kubus()">Hitung</button>
 <p>Hasil: <span id="hasilKubus"></span></p>
- Penjelasan:
-
-Input id="sisi" → user masukkan panjang sisi kubus.
-
+Analisis:
+Input id="sisi" untuk panjang sisi kubus.
 Tombol memanggil fungsi kubus().
+Hasil perhitungan akan ditampilkan di <span id="hasilKubus">.
 
-<span id="hasilKubus"> → tempat menampilkan hasil volume kubus.
-
+Form Input & Tombol (Balok)
+html
+Salin kode
 <h3>Volume Balok</h3>
 Panjang: <input type="text" id="p">
 Lebar: <input type="text" id="l">
 Tinggi: <input type="text" id="t">
 <button onclick="balok()">Hitung</button>
 <p>Hasil: <span id="hasilBalok"></span></p>
- Penjelasan:
-
-Input p, l, t → panjang, lebar, tinggi balok.
-
+Analisis:
+Input p = panjang, l = lebar, t = tinggi.
 Tombol memanggil fungsi balok().
+Output muncul di <span id="hasilBalok">.
 
-<span id="hasilBalok"> → menampilkan volume balok.
-
+Form Input & Tombol (Tabung)
+html
+Salin kode
 <h3>Volume Tabung</h3>
 Jari-jari: <input type="text" id="r">
 Tinggi: <input type="text" id="tinggiTabung">
 <button onclick="tabung()">Hitung</button>
 <p>Hasil: <span id="hasilTabung"></span></p>
- Penjelasan:
-
-Input r dan tinggiTabung → jari-jari dan tinggi tabung.
-
+Analisis:
+Input r = jari-jari, tinggiTabung = tinggi tabung.
 Tombol memanggil fungsi tabung().
+Hasil ditampilkan di <span id="hasilTabung">.
 
-<span id="hasilTabung"> → menampilkan volume tabung.
-
-<script>
+Fungsi JavaScript
+javascript
+Salin kode
 function kubus() {
   let s = parseFloat(document.getElementById("sisi").value);
   document.getElementById("hasilKubus").innerText = s * s * s;
 }
+Analisis:
+Ambil nilai sisi → konversi ke number dengan parseFloat.
+Hitung volume kubus = s³.
+Tampilkan hasil di hasilKubus.
 
+javascript
+Salin kode
 function balok() {
   let p = parseFloat(document.getElementById("p").value);
   let l = parseFloat(document.getElementById("l").value);
   let t = parseFloat(document.getElementById("t").value);
   document.getElementById("hasilBalok").innerText = p * l * t;
 }
+Analisis:
+Ambil panjang, lebar, tinggi.
+Hitung volume balok = p × l × t.
+Tampilkan hasil di hasilBalok.
 
+javascript
+Salin kode
 function tabung() {
   let r = parseFloat(document.getElementById("r").value);
   let t = parseFloat(document.getElementById("tinggiTabung").value);
   document.getElementById("hasilTabung").innerText = (Math.PI * r * r * t).toFixed(2);
 }
-</script>
- Penjelasan:
-
-Fungsi kubus() → ambil nilai sisi, hitung volume s^3, tampilkan di hasilKubus.
-
-Fungsi balok() → ambil panjang, lebar, tinggi, hitung volume p*l*t, tampilkan di hasilBalok.
-
-Fungsi tabung() → ambil jari-jari dan tinggi, hitung volume π*r^2*t, tampilkan di hasilTabung dengan 2 desimal (toFixed(2)).
-OUTPUT:
-![alt text](image.png)
-
-
-
-
-
-
-
-
-
-
-
-
+Analisis:
+Ambil jari-jari r dan tinggi t.
+Rumus volume tabung = π × r² × t.
+Math.PI = konstanta π (3.14159…).
+.toFixed(2) → membatasi hasil 2 angka desimal.
