@@ -58,8 +58,8 @@ Salin kode
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
 
- OUTPUT:
- <img src="output1.jpeg" alt="output 1">
+![Output 1](Pertemuan%205/Laporan/output1.jpeg)
+
 
 
 # Analisis file Even tertentu
