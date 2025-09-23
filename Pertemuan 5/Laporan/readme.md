@@ -58,7 +58,7 @@ Salin kode
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
 
-![Output 1](Pertemuan%205/Laporan/output1.jpeg)
+![Output 1](Pertemuan%205/Laporan/Gambar output/output1.jpeg)
 
 
 
