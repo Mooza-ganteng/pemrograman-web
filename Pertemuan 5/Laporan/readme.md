@@ -57,6 +57,8 @@ Salin kode
         </BODY> 
 </HTML>
  Menutup bagian <BODY> dan dokumen HTML (</HTML>).
+ OUTPUT:
+ <img src="Gambar output/output1.jpeg">
  
  # Analisis file Even tertentu
 <!DOCTYPE html> 
