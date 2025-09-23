@@ -577,7 +577,7 @@ Integer: 123 (tipe: number)
 Float: 45.67 (tipe: number)Boolean: true (tipe: boolean)
 
 # OUTPUT:
-<img src="Gambar output/outputtugas1.jpeg">
+<img src="Gambar output/outputTugas1.jpeg">
 
 
 # Analisis file tugas 2
@@ -605,7 +605,7 @@ data[2] → true → ditampilkan sebagai Status Mahasiswa: true.
 data[3] → 85.5 → ditampilkan sebagai Nilai: 85.5.
 
 # OUTPUT:
-<img src="Gambar output/outputtugas2.jpeg">
+<img src="Gambar output/outputTugas2.jpeg">
 
 
 # Analisis file tugas 3
@@ -668,7 +668,7 @@ Hasil disimpan di variabel result.
 document.getElementById("hasil").innerText = result; → menampilkan hasil ke <span id="hasil">.
 
 # OUTPUT:
-<img src="Gambar output/outputtugas3.jpeg">
+<img src="Gambar output/outputTugas3.jpeg">
 
 
 # Analisis file tugas 4
@@ -747,4 +747,4 @@ Math.PI = konstanta π (3.14159…).
 .toFixed(2) → membatasi hasil 2 angka desimal.
 
 # OUTPUT:
-<img src="Gambar output/outputtugas4.jpeg">
+<img src="Gambar output/outputTugas4.jpeg">
